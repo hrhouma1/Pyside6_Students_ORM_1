@@ -281,3 +281,75 @@ if __name__ == "__main__":
 * Écrire un script de retour arrière (`rollback_v2_to_v1.py`) pour restaurer l’ancien schéma en cas de problème.
 
 
+<br/>
+<br/>
+
+
+## Commandes
+
+
+### Création de l’environnement virtuel
+
+```bash
+python -m venv env
+.\env\Scripts\activate  # Windows
+source env/bin/activate  # Linux/macOS
+```
+
+
+
+### Installation des dépendances
+
+```bash
+pip install sqlalchemy
+```
+
+
+
+### Sauvegarde des données existantes
+
+```bash
+python backup_schema.py
+```
+
+
+
+### Création de la nouvelle base de données (schéma version 2)
+
+```bash
+python database_v2.py
+```
+
+
+
+### Lancement du script de migration
+
+```bash
+python migration_v1_to_v2.py
+```
+
+
+### Vérification de la migration
+
+```bash
+python test_migration.py
+```
+
+
+
+### Affichage des fichiers de sauvegarde (optionnel)
+
+```bash
+dir backup_*.json  # Windows
+ls backup_*.json   # Linux/macOS
+```
+
+
+
+### (Optionnel) Revenir à l'ancien schéma
+
+```bash
+python rollback_v2_to_v1.py
+```
+
+
